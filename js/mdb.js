@@ -1,6 +1,6 @@
 /*!
  * Material Design for Bootstrap 4
- * Version: MDB FREE: 4.5.11
+ * Version: MDB FREE: 4.5.12
  *
  *
  * Copyright: Material Design for Bootstrap
@@ -14815,13 +14815,15 @@ var WOW;
     };
 })(jQuery);
 
-($ => {
+'use strict';
 
-  const SCROLLING_NAVBAR_OFFSET_TOP = 50;
+(function ($) {
 
-  $(window).on('scroll', () => {
+  var SCROLLING_NAVBAR_OFFSET_TOP = 50;
 
-    const $navbar = $('.navbar');
+  $(window).on('scroll', function () {
+
+    var $navbar = $('.navbar');
     if ($navbar.length) {
 
       if ($navbar.offset().top > SCROLLING_NAVBAR_OFFSET_TOP) {
@@ -15445,39 +15447,41 @@ Waves.attach('.navbar-nav a:not(.navbar-brand), .nav-icons li a, .nav-tabs .nav-
 Waves.attach('.pager li a', ['waves-light']);
 Waves.attach('.pagination .page-item .page-link', ['waves-effect']);
 Waves.init();
-var _this = this;
+'use strict';
 
-($ => {
+(function ($) {
 
-  const inputSelector = `${['text', 'password', 'email', 'url', 'tel', 'number', 'search', 'search-md'].map(selector => `input[type=${selector}]`).join(', ')}, textarea`;
+  var inputSelector = ['text', 'password', 'email', 'url', 'tel', 'number', 'search', 'search-md'].map(function (selector) {
+    return 'input[type=' + selector + ']';
+  }).join(', ') + ', textarea';
 
-  const textAreaSelector = '.materialize-textarea';
+  var textAreaSelector = '.materialize-textarea';
 
-  const updateTextFields = $input => {
+  var updateTextFields = function updateTextFields($input) {
 
-    const $labelAndIcon = $input.siblings('label, i');
-    const hasValue = $input.val().length;
-    const hasPlaceholder = $input.attr('placeholder');
-    const addOrRemove = `${hasValue || hasPlaceholder ? 'add' : 'remove'}Class`;
+    var $labelAndIcon = $input.siblings('label, i');
+    var hasValue = $input.val().length;
+    var hasPlaceholder = $input.attr('placeholder');
+    var addOrRemove = (hasValue || hasPlaceholder ? 'add' : 'remove') + 'Class';
 
     $labelAndIcon[addOrRemove]('active');
   };
 
-  const validateField = $input => {
+  var validateField = function validateField($input) {
 
     if ($input.hasClass('validate')) {
 
-      const value = $input.val();
-      const noValue = !value.length;
-      const isValid = !$input[0].validity.badInput;
+      var value = $input.val();
+      var noValue = !value.length;
+      var isValid = !$input[0].validity.badInput;
 
       if (noValue && isValid) {
 
         $input.removeClass('valid').removeClass('invalid');
       } else {
 
-        const valid = $input.is(':valid');
-        const length = Number($input.attr('length')) || 0;
+        var valid = $input.is(':valid');
+        var length = Number($input.attr('length')) || 0;
 
         if (valid && (!length || length > value.length)) {
 
@@ -15490,14 +15494,14 @@ var _this = this;
     }
   };
 
-  const textAreaAutoResize = () => {
+  var textAreaAutoResize = function textAreaAutoResize() {
 
-    const $textarea = $(_this);
+    var $textarea = $(undefined);
     if ($textarea.val().length) {
 
-      const $hiddenDiv = $('.hiddendiv');
-      const fontFamily = $textarea.css('font-family');
-      const fontSize = $textarea.css('font-size');
+      var $hiddenDiv = $('.hiddendiv');
+      var fontFamily = $textarea.css('font-family');
+      var fontSize = $textarea.css('font-size');
 
       if (fontSize) {
 
@@ -15514,8 +15518,8 @@ var _this = this;
         $hiddenDiv.css('overflow-wrap', 'normal').css('white-space', 'pre');
       }
 
-      $hiddenDiv.text(`${$textarea.val()}\n`);
-      const content = $hiddenDiv.html().replace(/\n/g, '<br>');
+      $hiddenDiv.text($textarea.val() + '\n');
+      var content = $hiddenDiv.html().replace(/\n/g, '<br>');
       $hiddenDiv.html(content);
 
       // When textarea is hidden, width goes crazy.
@@ -15525,29 +15529,29 @@ var _this = this;
     }
   };
 
-  $(inputSelector).each((index, input) => {
+  $(inputSelector).each(function (index, input) {
 
-    const $this = $(input);
-    const $labelAndIcon = $this.siblings('label, i');
+    var $this = $(input);
+    var $labelAndIcon = $this.siblings('label, i');
     updateTextFields($this);
-    const isValid = input.validity.badInput;
+    var isValid = input.validity.badInput;
     if (isValid) {
 
       $labelAndIcon.addClass('active');
     }
   });
 
-  $(document).on('focus', inputSelector, e => {
+  $(document).on('focus', inputSelector, function (e) {
 
     $(e.target).siblings('label, i').addClass('active');
   });
 
-  $(document).on('blur', inputSelector, e => {
+  $(document).on('blur', inputSelector, function (e) {
 
-    const $this = $(e.target);
-    const noValue = !$this.val();
-    const invalid = !e.target.validity.badInput;
-    const noPlaceholder = $this.attr('placeholder') === undefined;
+    var $this = $(e.target);
+    var noValue = !$this.val();
+    var invalid = !e.target.validity.badInput;
+    var noPlaceholder = $this.attr('placeholder') === undefined;
 
     if (noValue && invalid && noPlaceholder) {
 
@@ -15557,36 +15561,36 @@ var _this = this;
     validateField($this);
   });
 
-  $(document).on('change', inputSelector, e => {
+  $(document).on('change', inputSelector, function (e) {
 
-    const $this = $(e.target);
+    var $this = $(e.target);
     updateTextFields($this);
     validateField($this);
   });
 
   $('input[autofocus]').siblings('label, i').addClass('active');
 
-  $(document).on('reset', e => {
+  $(document).on('reset', function (e) {
 
-    const $formReset = $(e.target);
+    var $formReset = $(e.target);
     if ($formReset.is('form')) {
 
-      const $formInputs = $formReset.find(inputSelector);
-      $formInputs.removeClass('valid').removeClass('invalid').each((index, input) => {
+      var $formInputs = $formReset.find(inputSelector);
+      $formInputs.removeClass('valid').removeClass('invalid').each(function (index, input) {
 
-        const $this = $(input);
-        const noDefaultValue = !$this.val();
-        const noPlaceholder = !$this.attr('placeholder');
+        var $this = $(input);
+        var noDefaultValue = !$this.val();
+        var noPlaceholder = !$this.attr('placeholder');
         if (noDefaultValue && noPlaceholder) {
           $this.siblings('label, i').removeClass('active');
         }
       });
 
-      $formReset.find('select.initialized').each((index, select) => {
+      $formReset.find('select.initialized').each(function (index, select) {
 
-        const $select = $(select);
-        const $visibleInput = $select.siblings('input.select-dropdown');
-        const defaultValue = $select.children('[selected]').val();
+        var $select = $(select);
+        var $visibleInput = $select.siblings('input.select-dropdown');
+        var defaultValue = $select.children('[selected]').val();
 
         $select.val(defaultValue);
         $visibleInput.val(defaultValue);
@@ -15596,19 +15600,19 @@ var _this = this;
 
   function init() {
 
-    const $text = $('.md-textarea-auto');
+    var $text = $('.md-textarea-auto');
     if ($text.length) {
 
-      let observe;
+      var observe = void 0;
       if (window.attachEvent) {
 
-        observe = function (element, event, handler) {
+        observe = function observe(element, event, handler) {
 
-          element.attachEvent(`on${event}`, handler);
+          element.attachEvent('on' + event, handler);
         };
       } else {
 
-        observe = function (element, event, handler) {
+        observe = function observe(element, event, handler) {
 
           element.addEventListener(event, handler, false);
         };
@@ -15616,12 +15620,12 @@ var _this = this;
 
       $text.each(function () {
 
-        const self = this;
+        var self = this;
 
         function resize() {
 
           self.style.height = 'auto';
-          self.style.height = `${self.scrollHeight}px`;
+          self.style.height = self.scrollHeight + 'px';
         }
 
         function delayedResize() {
@@ -15641,10 +15645,10 @@ var _this = this;
   }
   init();
 
-  const $body = $('body');
+  var $body = $('body');
   if (!$('.hiddendiv').first().length) {
 
-    const $hiddenDiv = $('<div class="hiddendiv common"></div>');
+    var $hiddenDiv = $('<div class="hiddendiv common"></div>');
     $body.append($hiddenDiv);
   }
 
