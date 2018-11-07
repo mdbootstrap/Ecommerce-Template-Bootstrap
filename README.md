@@ -29,7 +29,7 @@ ________
 **Main demo**: https://mdbootstrap.com/previews/free-templates/ecommerce/home-page.html
 
 # MDB Quick Start (5 minutes):
-**Written Tutorial**: https://mdbootstrap.com/mdb-quick-start/
+**Written Tutorial**: https://mdbootstrap.com/education/bootstrap/quick-start/
 
 **Video Tutorial**:https://www.youtube.com/watch?v=cXTThxoywNQ&t=9s
 
@@ -41,7 +41,7 @@ You can install MDBootstrap using NPM:
 
 **MDB - Bootstrap tutorial**: https://mdbootstrap.com/education/bootstrap/
 
-**MDB - Wordpress tutorial**: https://mdbootstrap.com/wordpress-tutorial/
+**MDB - Wordpress tutorial**: https://mdbootstrap.com/education/wordpress/
 
 # Documentation:
 
@@ -49,7 +49,7 @@ You can install MDBootstrap using NPM:
 
 # PRO version:
 
-**MDB Ecommerce Template Pro (jQuery version)**: https://mdbootstrap.com/product/ecommerce-theme/
+**MDB Ecommerce Template Pro (jQuery version)**: https://mdbootstrap.com/products/jquery-e-commerce/
 
 # Highlights:  
 **Bootstrap 4**  
@@ -86,13 +86,13 @@ A big **thank you to all our users** who are working with us to improve the soft
 
 # Useful Links:  
 
-Getting started: https://mdbootstrap.com/getting-started/  
+Getting started: https://mdbootstrap.com/docs/jquery/getting-started/download/  
 
-5 min quick start: https://mdbootstrap.com/mdb-quick-start/  
+5 min quick start: https://mdbootstrap.com/education/bootstrap/quick-start/  
 
 Material Design + Bootstrap Tutorial: https://mdbootstrap.com/education/bootstrap/  
 
-Material Design + WordPress Tutorial: https://mdbootstrap.com/wordpress-tutorial/  
+Material Design + WordPress Tutorial: https://mdbootstrap.com/education/wordpress/  
 
 Other Freebies: https://mdbootstrap.com/freebies/  
 
