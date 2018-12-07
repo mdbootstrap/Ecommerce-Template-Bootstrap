@@ -1,4 +1,4 @@
-[![Material Design for Bootstrap](https://mdbootstrap.com/wp-content/uploads/2018/01/product-page.jpg)](https://mdbootstrap.com/freebies/ecommerce-template/)
+[![Material Design for Bootstrap](https://mdbootstrap.com/wp-content/uploads/2018/01/product-page.jpg)](https://mdbootstrap.com/freebies/jquery/e-commerce/)
 
 # Bootstrap 4 & Material Design - Ecommerce Template 
 
@@ -7,7 +7,7 @@ Free, responsive Ecommerce template containing many types of product pages, shop
 ________
 
 # Live Previews: 
-## https://mdbootstrap.com/freebies/ecommerce-template/
+## https://mdbootstrap.com/freebies/jquery/e-commerce/
 
 # Most important features:
 
